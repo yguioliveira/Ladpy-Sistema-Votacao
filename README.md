@@ -32,7 +32,7 @@ Sistema de votacao em terminal desenvolvido em Python com integracao ao MySQL. O
 ## Estrutura do projeto
 
 ~~~text
-sistema-votacao-python-mysql/
+Ladpy-Sistema-Votacao/
 |-- database/
 |   |-- .env.example
 |   |-- banco_de_dados.sql
