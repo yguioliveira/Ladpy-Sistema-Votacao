@@ -31,9 +31,11 @@ Sistema de votacao em terminal desenvolvido em Python com integracao ao MySQL. O
 
 ## Estrutura do projeto
 
-```text
+~~~text
 LADPY---Sistema-de-Votacao/
 |-- database/
+|   |-- .env.example
+|   |-- banco_de_dados.sql
 |   |-- candidato_db.py
 |   |-- conexao.py
 |   |-- eleitor_db.py
@@ -50,72 +52,72 @@ LADPY---Sistema-de-Votacao/
 |   |-- input_utils.py
 |   |-- logs.py
 |   `-- tela.py
-|-- banco_de_dados.sql
 |-- main.py
 |-- requirements.txt
-|-- .env.example
+|-- .gitignore
+|-- LICENSE
 `-- README.md
-```
+~~~
 
 ## Como executar
 
 ### 1. Clone o repositorio
 
-```bash
-git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-cd NOME_DO_REPOSITORIO
-```
+~~~bash
+git clone https://github.com/yguioliveira/sistema-votacao-python-mysql.git
+cd sistema-votacao-python-mysql
+~~~
 
 ### 2. Crie e ative um ambiente virtual
 
 No Windows:
 
-```powershell
+~~~powershell
 python -m venv .venv
 .\.venv\Scripts\activate
-```
+~~~
 
 No Linux/macOS:
 
-```bash
+~~~bash
 python3 -m venv .venv
 source .venv/bin/activate
-```
+~~~
 
 ### 3. Instale as dependencias
 
-```bash
+~~~bash
 pip install -r requirements.txt
-```
+~~~
 
 ### 4. Configure o banco de dados
 
 Crie o banco e as tabelas executando o arquivo:
 
-```text
-banco_de_dados.sql
-```
+~~~text
+database/banco_de_dados.sql
+~~~
 
 Esse script cria o banco `projetointegrador_db`, as tabelas principais e alguns dados iniciais para teste.
 
 ### 5. Configure as variaveis de ambiente
 
-Copie o arquivo `.env.example` para `.env` e preencha com os dados do seu MySQL:
+Copie o arquivo `database/.env.example` para `.env`, na raiz do projeto, e preencha com os dados do seu MySQL:
 
-```env
+~~~env
 DB_HOST=127.0.0.1
 DB_USER=root
 DB_PASSWORD=sua_senha_mysql
 DB_NAME=projetointegrador_db
-```
+~~~
 
 O arquivo `.env` nao deve ser enviado ao GitHub.
 
 ### 6. Execute o sistema
 
-```bash
+~~~bash
 python main.py
-```
+~~~
 
 ## Fluxo principal
 
@@ -141,7 +143,7 @@ Principais tabelas:
 
 ## Dados de teste
 
-O arquivo `banco_de_dados.sql` inclui eleitores e candidatos iniciais. As chaves de acesso de teste estao comentadas no proprio script SQL.
+O arquivo `database/banco_de_dados.sql` inclui eleitores e candidatos iniciais. As chaves de acesso de teste estao comentadas no proprio script SQL.
 
 ## Observacoes de seguranca
 
