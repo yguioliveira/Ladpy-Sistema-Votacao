@@ -1,157 +1,119 @@
-# Sistema de Votacao Digital
+# 🗳️ LADPY - Sistema de Votação Segura
 
-Sistema de votacao em terminal desenvolvido em Python com integracao ao MySQL. O projeto possui gerenciamento de eleitores, abertura e encerramento de votacao, registro de votos, auditoria, criptografia de dados sensiveis e apuracao de resultados.
+Projeto acadêmico desenvolvido durante a graduação em Engenharia de Software na Pontifícia Universidade Católica de Campinas (PUC Campinas).
 
-> Projeto academico desenvolvido para a disciplina de Projeto Integrador I, adaptado para apresentacao em portfolio.
+O LADPY é um sistema de votação eletrônica desenvolvido com foco na organização, segurança e integridade do processo eleitoral, permitindo o gerenciamento da votação, autenticação dos responsáveis, auditoria dos eventos e apuração dos resultados.
 
-## Funcionalidades
+---
 
-- Cadastro, edicao, remocao, busca e listagem de eleitores.
-- Listagem de candidatos cadastrados.
-- Validacao de CPF e titulo de eleitor.
-- Criptografia de CPF, chave de acesso e protocolo usando Cifra de Hill.
-- Autenticacao de mesario para abertura e encerramento da votacao.
-- Execucao da zerezima antes da abertura da urna.
-- Controle de status da votacao: aberta ou fechada.
-- Autenticacao de eleitor por titulo, CPF parcial e chave de acesso.
-- Registro de voto em banco de dados MySQL.
-- Bloqueio de voto duplicado.
-- Registro de voto nulo para numero de candidato inexistente.
-- Geracao de protocolo de votacao.
-- Auditoria com logs de ocorrencias e protocolos.
-- Resultados com boletim de urna, comparecimento, votos por partido e validacao de integridade.
+## 🎯 Objetivo
 
-## Tecnologias
+Desenvolver uma solução capaz de simular um processo eleitoral seguro e controlado, aplicando validações, mecanismos de auditoria e integração com banco de dados para garantir a confiabilidade das operações realizadas durante a votação.
 
-- Python
+---
+
+## 👥 Equipe
+
+Projeto desenvolvido em grupo com 5 integrantes.
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+- Python 3
 - MySQL
-- mysql-connector-python
-- python-dotenv
+- MySQL Workbench
+- VS Code
 - Git e GitHub
 
-## Estrutura do projeto
+---
 
-~~~text
-Ladpy-Sistema-Votacao/
-|-- database/
-|   |-- .env.example
-|   |-- banco_de_dados.sql
-|   |-- candidato_db.py
-|   |-- conexao.py
-|   |-- eleitor_db.py
-|   |-- resultado_db.py
-|   `-- votacao_db.py
-|-- menus/
-|   |-- menu_gerenciamento.py
-|   |-- menu_principal.py
-|   `-- menu_votacao.py
-|-- utils/
-|   |-- criptografia.py
-|   |-- documentos.py
-|   |-- geral.py
-|   |-- input_utils.py
-|   |-- logs.py
-|   `-- tela.py
-|-- main.py
-|-- requirements.txt
-|-- .gitignore
-|-- LICENSE
-`-- README.md
-~~~
+## ✨ Funcionalidades
 
-## Como executar
+### 🗳️ Gerenciamento da votação
+- Abertura da votação;
+- Fechamento da votação;
+- Controle do status da eleição;
+- Execução da zerézima;
+- Limpeza de votos anteriores.
 
-### 1. Clone o repositorio
+### 🔐 Segurança e autenticação
+- Autenticação do mesário;
+- Validação de credenciais;
+- Dupla verificação da chave de acesso;
+- Confirmação das operações críticas.
 
-~~~bash
-git clone https://github.com/yguioliveira/sistema-votacao-python-mysql.git
-cd sistema-votacao-python-mysql
-~~~
+### 📋 Auditoria
+- Registro de logs de ocorrência;
+- Consulta de protocolos gerados;
+- Exibição das ações realizadas;
+- Apoio à verificação da integridade do processo eleitoral.
 
-### 2. Crie e ative um ambiente virtual
+### 📊 Resultados e apuração
+- Boletim de urna;
+- Consulta de votos por partido;
+- Controle de comparecimento;
+- Validação da consistência dos resultados.
 
-No Windows:
+---
 
-~~~powershell
-python -m venv .venv
-.\.venv\Scripts\activate
-~~~
+## 🧠 Conceitos aplicados
 
-No Linux/macOS:
+Durante o desenvolvimento deste projeto foram aplicados conceitos importantes de Engenharia de Software, como:
 
-~~~bash
-python3 -m venv .venv
-source .venv/bin/activate
-~~~
+- Autenticação e validação de credenciais;
+- Controle do ciclo de vida da votação;
+- Registro e auditoria de eventos;
+- Integridade do processo eleitoral;
+- Manipulação e consultas em banco de dados MySQL;
+- Testes e validação das funcionalidades implementadas;
+- Desenvolvimento colaborativo em equipe;
+- Organização modular das responsabilidades do sistema.
 
-### 3. Instale as dependencias
+---
 
-~~~bash
-pip install -r requirements.txt
-~~~
+## 👨‍💻 Minha participação
 
-### 4. Configure o banco de dados
+Fui responsável pelo desenvolvimento da navegação entre o menu principal, o módulo de gerenciamento e o módulo de votação, estruturando os submenus e o acesso às funcionalidades do sistema.
 
-Crie o banco e as tabelas executando o arquivo:
+Implementei a abertura da votação, incluindo a autenticação do mesário, validação das credenciais, execução da zerézima, limpeza dos votos anteriores e atualização do status da votação para aberta.
 
-~~~text
-database/banco_de_dados.sql
-~~~
+Também desenvolvi o processo de fechamento da votação, realizando a validação do mesário, confirmação do encerramento, dupla verificação da chave de acesso e atualização do status para fechada.
 
-Esse script cria o banco `projetointegrador_db`, as tabelas principais e alguns dados iniciais para teste.
+Fiquei responsável pela integração das opções do menu de votação, conectando funcionalidades como abertura da votação, auditoria, consulta de resultados e retorno ao menu principal.
 
-### 5. Configure as variaveis de ambiente
+Implementei a funcionalidade de auditoria do sistema, incluindo o registro e exibição de logs de ocorrência, consulta dos protocolos gerados e apoio à verificação da integridade do processo eleitoral.
 
-Copie o arquivo `database/.env.example` para `.env`, na raiz do projeto, e preencha com os dados do seu MySQL:
+Além disso, participei em conjunto com a equipe na implementação dos resultados da votação, contribuindo com testes, validação das consultas ao banco de dados e conferência do boletim de urna, votos por partido, comparecimento e consistência das informações apresentadas.
 
-~~~env
-DB_HOST=127.0.0.1
-DB_USER=root
-DB_PASSWORD=sua_senha_mysql
-DB_NAME=projetointegrador_db
-~~~
+---
 
-O arquivo `.env` nao deve ser enviado ao GitHub.
+## ▶️ Como executar
 
-### 6. Execute o sistema
+1. Clone este repositório:
 
-~~~bash
-python main.py
-~~~
+```bash
+git clone https://github.com/yguioliveira/Ladpy-Sistema-Votacao.git
+```
 
-## Fluxo principal
+2. Configure o banco de dados MySQL utilizando os scripts fornecidos no projeto.
 
-1. O sistema inicia pelo `main.py`.
-2. O menu principal permite acessar gerenciamento ou votacao.
-3. No gerenciamento, e possivel administrar eleitores e consultar candidatos.
-4. Na votacao, um mesario autenticado abre a urna.
-5. A zerezima limpa votos anteriores e redefine os eleitores para `NAO_VOTOU`.
-6. O eleitor se autentica e registra seu voto.
-7. O sistema gera protocolo, salva o voto e marca o eleitor como `JA_VOTOU`.
-8. O mesario encerra a votacao.
-9. O sistema libera auditoria e resultados.
+3. Abra o projeto no VS Code.
 
-## Banco de dados
+4. Execute o arquivo principal da aplicação utilizando Python.
 
-Principais tabelas:
+5. Utilize as credenciais cadastradas para acessar as funcionalidades do sistema.
 
-- `eleitores`: armazena dados dos eleitores, CPF criptografado, chave criptografada e status do voto.
-- `candidatos`: armazena candidatos disponiveis para votacao.
-- `votos`: registra votos, data/hora e protocolo criptografado.
-- `logs`: registra ocorrencias de auditoria.
-- `controle_votacao`: controla se a votacao esta aberta ou fechada.
+---
 
-## Dados de teste
+## 🎓 Contexto acadêmico
 
-O arquivo `database/banco_de_dados.sql` inclui eleitores e candidatos iniciais. As chaves de acesso de teste estao comentadas no proprio script SQL.
+Projeto desenvolvido como atividade acadêmica do curso de Engenharia de Software da Pontifícia Universidade Católica de Campinas (PUC Campinas).
 
-## Observacoes de seguranca
+---
 
-- CPFs nao sao armazenados em texto puro.
-- Chaves de acesso e protocolos sao criptografados.
-- A senha do banco deve ficar apenas no arquivo `.env`.
-- O arquivo `.env` esta protegido pelo `.gitignore`.
+## 📚 Aprendizados
 
-## Licenca
+Este projeto contribuiu significativamente para o desenvolvimento de habilidades relacionadas à construção de sistemas críticos, autenticação de usuários, auditoria de operações, validação de dados, integração com banco de dados e trabalho colaborativo em equipe.
 
-Este projeto esta licenciado sob a licenca MIT.
+A experiência também reforçou a importância da integridade das informações e da confiabilidade dos processos em aplicações que exigem elevado nível de controle e rastreabilidade.
